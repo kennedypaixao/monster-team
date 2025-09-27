@@ -971,6 +971,116 @@ a {
     }
 }
 
+/* Schedule Section */
+.schedule {
+    padding: 5rem 0;
+    background: var(--bg-section);
+}
+
+.day-schedule {
+    margin-bottom: 3rem;
+}
+
+.day-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    border-radius: 16px;
+    color: white;
+}
+
+.day-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.category-schedule {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: var(--bg-light);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-gold);
+}
+
+.category-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.exercises-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.exercise-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.exercise-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--secondary-blue);
+}
+
+.exercise-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.exercise-time {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-blue);
+    background: var(--light-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Responsive Design for Schedule */
+@media (max-width: 768px) {
+    .schedule {
+        padding: 3rem 0;
+    }
+    
+    .exercises-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-schedule {
+        padding: 1.5rem;
+    }
+    
+    .day-header {
+        padding: 1rem;
+    }
+    
+    .day-title {
+        font-size: 1.5rem;
+    }
+    
+    .category-title {
+        font-size: 1.125rem;
+    }
+}
+
 /* Packages Section */
 .packages {
     padding: 5rem 0;
