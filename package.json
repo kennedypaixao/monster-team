@@ -1,0 +1,28 @@
+{
+  "name": "tcb-sponsorship-landing",
+  "version": "1.0.0",
+  "description": "Landing page profissional para patrocínios TCB - The Coaching Business",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 3000 || python -m SimpleHTTPServer 3000",
+    "build": "echo 'Site estático - nenhuma build necessária'",
+    "start": "npm run dev",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "tcb",
+    "coaching",
+    "patrocinio",
+    "parceria",
+    "landing-page",
+    "vercel",
+    "sponsorship",
+    "business"
+  ],
+  "author": "TCB - The Coaching Business",
+  "license": "MIT",
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
