@@ -209,7 +209,13 @@ a {
 /* Hero Section */
 .hero {
     padding: 120px 0 80px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+    /* background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%); */
+    background: 
+        url('./files/team_01.jpeg');
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -226,21 +232,23 @@ a {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: var(--text-primary);
+    color: var(--light-blue);
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-gold) 100%);
+    background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--light-blue) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-weight: bold;
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
+    font-size: 2rem;
+    color: var(--bg-light);
     margin-bottom: 2rem;
     line-height: 1.6;
+    text-align: center;
 }
 
 .hero-cta {
@@ -415,6 +423,8 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    align-items: center;
+    justify-items: center;
 }
 
 .feature-card {
@@ -424,6 +434,7 @@ a {
     border: 1px solid #e5e5e5;
     transition: all 0.3s ease;
     text-align: center;
+    max-width: 350px;
 }
 
 .feature-card:hover {
@@ -436,12 +447,24 @@ a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
+    width: 120px;
     height: 60px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 16px;
     margin-bottom: 1.5rem;
     color: white;
+}
+
+.title-separator {
+    margin: 2.6rem 0;
+    text-align: center;
+    width: 100%;
+}
+.title-separator h3 {
+    font-size: 1.6rem;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
 }
 
 .feature-title {
@@ -778,16 +801,31 @@ a {
 
 /* About TCB Section */
 .about-tcb {
-    padding: 100px 0;
-    background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
+    padding: 150px 0;
+    background-color: var(--primary-blue);
+    /* background: 
+        url('./files/team_01.jpeg');
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center; */
     color: white;
     position: relative;
     overflow: hidden;
 }
 
+.degrade-image {
+    background: rgb(25 46 104 / 64%);
+    position: absolute;
+    width: 100%;  
+    height: 100%;
+    z-index: 0;
+    left: 0;
+    top: 0;
+}
+
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
     gap: 4rem;
     align-items: center;
 }
@@ -822,6 +860,7 @@ a {
 
 .about-text {
     padding: 2rem 0;
+    z-index: 1;
 }
 
 .about-header {
@@ -829,12 +868,13 @@ a {
     align-items: center;
     gap: 1rem;
     margin-bottom: 2rem;
+    justify-content: center;
 }
 
 .section-marker {
     width: 4px;
     height: 60px;
-    background: var(--accent-gold);
+    background: var(--light-blue);
     border-radius: 2px;
 }
 
@@ -844,6 +884,7 @@ a {
     color: white;
     letter-spacing: 2px;
     margin: 0;
+    text-align: center;
 }
 
 .about-description {
@@ -855,6 +896,7 @@ a {
     line-height: 1.8;
     margin-bottom: 1.5rem;
     color: rgba(255, 255, 255, 0.9);
+    text-align: center;
 }
 
 .about-description strong {
