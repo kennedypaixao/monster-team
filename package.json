@@ -21,8 +21,10 @@
   ],
   "author": "TCB - The Coaching Business",
   "license": "MIT",
-  "devDependencies": {},
   "engines": {
     "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "vercel": "^48.1.6"
   }
 }
