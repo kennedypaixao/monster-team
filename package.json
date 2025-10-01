@@ -4,6 +4,7 @@
   "description": "Landing page profissional para patrocínios TCB - The Coaching Business",
   "main": "index.html",
   "scripts": {
+    "devp": "python3 -m http.server 3000 || python -m SimpleHTTPServer 3000",
     "dev": "http-server -p 3000",
     "build": "echo 'Site estático - nenhuma build necessária'",
     "start": "npm run dev",
@@ -26,5 +27,8 @@
   },
   "dependencies": {
     "vercel": "^48.1.6"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.4"
   }
 }
