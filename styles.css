@@ -1378,7 +1378,7 @@ a {
 /* Responsive Design for Leaderboard */
 @media (max-width: 768px) {
     #leaderboard-image-team {
-        width: 200px; 
+        width: 375px;
         height: auto;
     }
 
