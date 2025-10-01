@@ -2196,3 +2196,131 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+/* iPhone specific styles */
+@media screen and (max-device-width: 414px) and (-webkit-min-device-pixel-ratio: 2) {
+    body {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .hero {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .navbar {
+        background: rgba(30, 58, 138, 0.95) !important;
+        backdrop-filter: blur(20px);
+    }
+}
+
+/* iPhone X, XS, 11 Pro, 12 mini, 13 mini */
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    body {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .hero {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .navbar {
+        background: rgba(30, 58, 138, 0.95) !important;
+        backdrop-filter: blur(20px);
+    }
+}
+
+/* iPhone XR, 11 */
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+    body {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .hero {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .navbar {
+        background: rgba(30, 58, 138, 0.95) !important;
+        backdrop-filter: blur(20px);
+    }
+}
+
+/* iPhone XS Max, 11 Pro Max */
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+    body {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .hero {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .navbar {
+        background: rgba(30, 58, 138, 0.95) !important;
+        backdrop-filter: blur(20px);
+    }
+}
+
+/* iPhone 12, 12 Pro, 13, 13 Pro, 14, 14 Pro */
+@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+    body {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .hero {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .navbar {
+        background: rgba(30, 58, 138, 0.95) !important;
+        backdrop-filter: blur(20px);
+    }
+}
+
+/* iPhone 12 Pro Max, 13 Pro Max, 14 Plus, 14 Pro Max */
+@media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+    body {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .hero {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .navbar {
+        background: rgba(30, 58, 138, 0.95) !important;
+        backdrop-filter: blur(20px);
+    }
+}
+
+/* iPhone 15, 15 Pro */
+@media only screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) {
+    body {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .hero {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .navbar {
+        background: rgba(30, 58, 138, 0.95) !important;
+        backdrop-filter: blur(20px);
+    }
+}
+
+/* iPhone 15 Plus, 15 Pro Max */
+@media only screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) {
+    body {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .hero {
+        background-color: var(--primary-blue) !important;
+    }
+    
+    .navbar {
+        background: rgba(30, 58, 138, 0.95) !important;
+        backdrop-filter: blur(20px);
+    }
+}
