@@ -7,7 +7,19 @@
     <title>Monster Team</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 2L2 7v10c0 5.55 3.84 9.74 9 10.79V27c5.16-1.05 9-5.24 9-10.79V7l-10-5z'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/x-icon" href="./files/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="./files/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./files/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="./files/favicon/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./files/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="./files/favicon/favicon-144x144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./files/favicon/favicon-192x192.png">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="./files/favicon/apple-touch-icon.png">
+    
+    <!-- Manifest for PWA support -->
+    <link rel="manifest" href="./files/favicon/manifest.json">
     
     <!-- Preconnect to improve loading performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,28 +86,6 @@
                         </svg>
                     </a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Live Banner -->
-    <section class="live-banner">
-        <div class="container">
-            <div class="live-banner-content">
-                <div class="live-indicator">
-                    <div class="live-dot"></div>
-                    <span class="live-text">AO VIVO</span>
-                </div>
-                <div class="live-info">
-                    <h3>Nos acompanhe ao vivo pelo canal do TCB</h3>
-                    <p>Assista todas as competições em tempo real</p>
-                </div>
-                <a href="https://www.youtube.com/@canaltcboficial/streams" target="_blank" class="btn btn-live">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="5,3 19,12 5,21"/>
-                    </svg>
-                    Assistir no YouTube
-                </a>
             </div>
         </div>
     </section>
@@ -206,6 +196,28 @@
                     <h3 class="feature-title gradient-text full">MATHEUS POVOAS</h3>
                     <a href="https://www.instagram.com/matheus_povoas" target="_blank">@matheus_povoas</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Live Banner -->
+    <section class="live-banner">
+        <div class="container">
+            <div class="live-banner-content">
+                <div class="live-indicator">
+                    <div class="live-dot"></div>
+                    <span class="live-text">GRAVAÇÕES</span>
+                </div>
+                <div class="live-info">
+                    <h3>Veja as gravações das competições do TCB</h3>
+                    <p>Assista todos os momentos da competição</p>
+                </div>
+                <a href="https://www.youtube.com/@canaltcboficial/streams" target="_blank" class="btn btn-live">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5,3 19,12 5,21"/>
+                    </svg>
+                    Assistir no YouTube
+                </a>
             </div>
         </div>
     </section>
@@ -399,20 +411,20 @@
             <div class="leaderboard-grid">
                 <!-- Times Leaderboard -->
                 <div class="leaderboard-card">
+                    <!-- <div class="position-badge position-17">16º</div> -->
                     <div class="leaderboard-header">
                         <div class="leaderboard-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
+                            <img src="./files/joana_02.png" alt="Times" style="width: 120px; height: auto;">
                         </div>
                         <h3 class="leaderboard-title">TIMES</h3>
                         <p class="leaderboard-subtitle">QUARTETO: BABE, JENNY, LELO, POVOAS</p>
+                        <div class="position-highlight">
+                            <span class="position-number">16º</span>
+                            <span class="position-text">LUGAR GERAL</span>
+                        </div>
                     </div>
                     <a href="https://app.champy.com.br/#/hub/2588d80e8572b51738667ebb293b25ae429bc18f9e27d1a1fb438c05d9e9" target="_blank" class="btn btn-primary leaderboard-btn">
-                        Ver Classificação
+                        Ver Classificação Completa
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
                             <polyline points="15,3 21,3 21,9"/>
@@ -423,17 +435,20 @@
 
                 <!-- Elite Feminino Leaderboard -->
                 <div class="leaderboard-card">
+                    <!-- <div class="position-badge position-10">6º</div> -->
                     <div class="leaderboard-header">
                         <div class="leaderboard-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="12,2 15.09,8.26 22,9 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9 8.91,8.26"/>
-                            </svg>
+                            <img src="./files/joana_02.png" alt="Elite Feminino" style="width: 120px; height: auto;">
                         </div>
                         <h3 class="leaderboard-title">ELITE FEMININO</h3>
                         <p class="leaderboard-subtitle">JOANNA BOAVENTURA</p>
+                        <div class="position-highlight position-highlight-top10">
+                            <span class="position-number">6º</span>
+                            <span class="position-text">TOP 10 BRASIL</span>
+                        </div>
                     </div>
                     <a href="https://app.champy.com.br/#/hub/f77b779eb9b1318900dd1a431acfba7b4c0d9985caaf73e7de9460af9b5a" target="_blank" class="btn btn-primary leaderboard-btn">
-                        Ver Classificação
+                        Ver Classificação Completa
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
                             <polyline points="15,3 21,3 21,9"/>
@@ -444,17 +459,20 @@
 
                 <!-- Master Masculino Leaderboard -->
                 <div class="leaderboard-card">
+                    <!-- <div class="position-badge position-7">7º</div> -->
                     <div class="leaderboard-header">
                         <div class="leaderboard-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2l3.09 6.26L22 9l-5 4.87 1.18 6.88L12 17.27l-6.18 3.48L7 14.87 2 9l6.91-.74L12 2z"/>
-                            </svg>
+                            <img src="./files/mayckon.jpeg" alt="Master Masculino" style="width: 120px; height: auto;">
                         </div>
                         <h3 class="leaderboard-title">MASTER MASCULINO</h3>
                         <p class="leaderboard-subtitle">35-39/40-44 - MAYCKON RIBEIRO</p>
+                        <div class="position-highlight position-highlight-top10">
+                            <span class="position-number">5º</span>
+                            <span class="position-text">TOP 10 BRASIL</span>
+                        </div>
                     </div>
                     <a href="https://app.champy.com.br/#/hub/4f68994fad3ff4fe2752eecb11e640a7c584d3c47e5940a78da55e24f751" target="_blank" class="btn btn-primary leaderboard-btn">
-                        Ver Classificação
+                        Ver Classificação Completa
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
                             <polyline points="15,3 21,3 21,9"/>
