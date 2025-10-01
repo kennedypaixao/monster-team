@@ -483,7 +483,6 @@ a {
     align-items: center;
     justify-content: center;
     width: 120px;
-    height: 60px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 16px;
     margin-bottom: 1.5rem;
@@ -1319,9 +1318,9 @@ a {
 }
 
 .leaderboard-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    /* width: 80px;
+    height: 80px; */
+    /* background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1370,8 +1369,19 @@ a {
     transform: translateX(4px);
 }
 
+#leaderboard-image-team {
+    width: auto; 
+    height: 120px;
+}
+
+
 /* Responsive Design for Leaderboard */
 @media (max-width: 768px) {
+    #leaderboard-image-team {
+        width: 200px; 
+        height: auto;
+    }
+
     .leaderboard {
         padding: 3rem 0;
     }
@@ -1383,11 +1393,6 @@ a {
     
     .leaderboard-card {
         padding: 2rem;
-    }
-    
-    .leaderboard-icon {
-        width: 64px;
-        height: 64px;
     }
     
     .leaderboard-title {
