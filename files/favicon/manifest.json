@@ -4,8 +4,8 @@
     "description": "Equipe classificada para as finais do TCB 2025 - Torneio CrossFit Brasil",
     "start_url": "../../",
     "display": "standalone",
-    "background_color": "#000000",
-    "theme_color": "#8B5CF6",
+    "background_color": "#dbeafe",
+    "theme_color": "#1e3a8a",
     "icons": [
         {
             "src": "./favicon-16x16.png",
