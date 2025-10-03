@@ -2448,6 +2448,7 @@ img {
     top: 0;
     z-index: 10001;
     text-align: center;
+    background: #f1f2f6;
 }
 
 .gallery-header h2 {
@@ -2551,7 +2552,7 @@ img {
 }
 
 .nav-btn {
-    background: hwb(214.29deg 85.88% 0.39% / 44%);
+    background: rgba(0, 0, 0, 0.8);
     border: none;
     color: white;
     cursor: pointer;

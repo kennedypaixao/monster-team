@@ -918,8 +918,38 @@ const highlightVideos = {
     ],
     "test": [
         {
+            id: 'peYPwagKXvI',
+            title: 'Monster Team TCB 2025 - Prova 5',
+            thumbnail: './files/mayckon.jpeg',
+            type: 'youtube'
+        },
+        {
+            id: 'Oqs912NCeXA',
+            title: 'Monster Team TCB 2025 - Prova 6',
+            thumbnail: './files/mayckon.jpeg',
+            type: 'youtube'
+        },
+         {
+            id: 'nFsXSPzxBPg',
+            title: 'Monster Team TCB 2025 - Prova 7',
+            thumbnail: './files/mayckon.jpeg',
+            type: 'youtube'
+        },
+        {
+            id: '8Xb0aNrjKhg',
+            title: 'Monster Team TCB 2025 - Prova 8',
+            thumbnail: './files/mayckon.jpeg',
+            type: 'youtube'
+        },
+        {
+            id: 'PhMAW-rQ7zw',
+            title: 'Monster Team TCB 2025 - Prova 9',
+            thumbnail: './files/mayckon.jpeg',
+            type: 'youtube'
+        },
+        {
             id: 'hi6LLO8YFmg',
-            title: 'Monster Team TCB 2025 - Prova',
+            title: 'Monster Team TCB 2025 - Prova Final',
             thumbnail: './files/mayckon.jpeg',
             type: 'youtube'
         }
