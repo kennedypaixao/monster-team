@@ -625,3 +625,267 @@ function getPageSection(element) {
     
     return currentSection;
 }
+
+// Highlights Section Accordion Functionality
+function toggleAccordion(categoryId) {
+    const content = document.getElementById(categoryId + '-content');
+    const card = content.closest('.category-card');
+    const arrow = card.querySelector('.accordion-arrow');
+    
+    // Close all other accordions
+    document.querySelectorAll('.accordion-content').forEach(otherContent => {
+        if (otherContent !== content && otherContent.classList.contains('active')) {
+            otherContent.classList.remove('active');
+            otherContent.closest('.category-card').classList.remove('active');
+        }
+    });
+    
+    // Toggle current accordion
+    content.classList.toggle('active');
+    card.classList.toggle('active');
+    
+    // Track accordion interaction
+    trackEvent('Accordion_Toggle', {
+        category: categoryId,
+        action: content.classList.contains('active') ? 'open' : 'close'
+    });
+}
+
+// Media Modal for viewing images and videos in fullscreen
+function openMediaModal(mediaSrc, mediaType = 'image') {
+    const modal = document.createElement('div');
+    modal.className = 'media-modal';
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 10001;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        cursor: pointer;
+    `;
+    
+    const mediaElement = mediaType === 'video' 
+        ? `<video controls style="max-width: 90%; max-height: 90%; border-radius: 8px;" autoplay>
+             <source src="${mediaSrc}" type="video/mp4">
+           </video>`
+        : `<img src="${mediaSrc}" style="max-width: 90%; max-height: 90%; border-radius: 8px; object-fit: contain;">`;
+    
+    modal.innerHTML = `
+        <button class="modal-close" style="
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10002;
+        ">&times;</button>
+        ${mediaElement}
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Show modal
+    setTimeout(() => modal.style.opacity = '1', 10);
+    
+    // Close modal functionality
+    const closeModal = () => {
+        modal.style.opacity = '0';
+        setTimeout(() => {
+            if (modal.parentNode) {
+                modal.parentNode.removeChild(modal);
+            }
+        }, 300);
+    };
+    
+    modal.querySelector('.modal-close').addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeModal();
+    });
+    
+    modal.addEventListener('click', closeModal);
+    
+    // Prevent closing when clicking on media
+    modal.querySelector(mediaType === 'video' ? 'video' : 'img').addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+}
+
+// Initialize media modal functionality when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Add click handlers to media items for modal viewing
+    document.addEventListener('click', function(event) {
+        const mediaItem = event.target.closest('.media-item');
+        if (mediaItem) {
+            const img = mediaItem.querySelector('img');
+            const video = mediaItem.querySelector('video');
+            
+            if (img) {
+                openMediaModal(img.src, 'image');
+            } else if (video) {
+                openMediaModal(video.querySelector('source').src, 'video');
+            }
+        }
+    });
+});
+
+// YouTube Iframe handling (Highlights Section)
+document.addEventListener('DOMContentLoaded', function() {
+    const highlightsIframe = document.getElementById('highlights-video');
+    
+    if (highlightsIframe) {
+        // Create intersection observer to detect when iframe enters viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    console.log('YouTube video iframe is in viewport');
+                    // YouTube iframe with autoplay=1 will automatically start playing
+                } else {
+                    console.log('YouTube video iframe is out of viewport');
+                    // YouTube iframe will continue playing unless user manually pauses
+                }
+            });
+        }, {
+            threshold: 0.3 // Trigger when 30% of the iframe is visible
+        });
+        
+        // Start observing the iframe element
+        observer.observe(highlightsIframe);
+        
+        // Log when iframe loads
+        highlightsIframe.addEventListener('load', function() {
+            console.log('YouTube iframe loaded successfully');
+        });
+    }
+});
+
+// Image Gallery Functions
+let currentImageIndex = 0;
+let galleryImages = [];
+
+// List of available images in the highlights folder
+const highlightImages = [
+    './files/highlights/Image/highlights_0.jpg',
+    './files/highlights/Image/highlights_1.JPG',
+    './files/highlights/Image/highlights_2.jpeg',
+    './files/highlights/Image/highlights_3.jpeg',
+    './files/highlights/Image/highlights_4.jpeg'
+    // Note: HEIC files are not supported in browsers, only showing JPG/JPEG files
+];
+
+function openImageGallery() {
+    const modal = document.getElementById('imageGalleryModal');
+    const galleryGrid = document.getElementById('galleryGrid');
+    
+    // Clear existing content
+    galleryGrid.innerHTML = '';
+    
+    // Create gallery items
+    highlightImages.forEach((imageSrc, index) => {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+        galleryItem.onclick = () => openFullImage(index);
+        
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.alt = `TCB 2025 Highlight ${index + 1}`;
+        img.loading = 'lazy';
+        
+        galleryItem.appendChild(img);
+        galleryGrid.appendChild(galleryItem);
+    });
+    
+    galleryImages = highlightImages;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageGallery() {
+    const modal = document.getElementById('imageGalleryModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+function openFullImage(index) {
+    currentImageIndex = index;
+    const fullImageModal = document.getElementById('fullImageModal');
+    const fullImage = document.getElementById('fullImage');
+    
+    fullImage.src = galleryImages[currentImageIndex];
+    fullImage.alt = `TCB 2025 Highlight ${currentImageIndex + 1}`;
+    
+    fullImageModal.style.display = 'flex';
+}
+
+function closeFullImage() {
+    const fullImageModal = document.getElementById('fullImageModal');
+    fullImageModal.style.display = 'none';
+}
+
+function previousImage() {
+    currentImageIndex = currentImageIndex > 0 ? currentImageIndex - 1 : galleryImages.length - 1;
+    const fullImage = document.getElementById('fullImage');
+    fullImage.src = galleryImages[currentImageIndex];
+    fullImage.alt = `TCB 2025 Highlight ${currentImageIndex + 1}`;
+}
+
+function nextImage() {
+    currentImageIndex = currentImageIndex < galleryImages.length - 1 ? currentImageIndex + 1 : 0;
+    const fullImage = document.getElementById('fullImage');
+    fullImage.src = galleryImages[currentImageIndex];
+    fullImage.alt = `TCB 2025 Highlight ${currentImageIndex + 1}`;
+}
+
+// Close modals when clicking outside
+document.addEventListener('click', function(event) {
+    const galleryModal = document.getElementById('imageGalleryModal');
+    const fullImageModal = document.getElementById('fullImageModal');
+    
+    if (event.target === galleryModal) {
+        closeImageGallery();
+    }
+    
+    if (event.target === fullImageModal) {
+        closeFullImage();
+    }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', function(event) {
+    const fullImageModal = document.getElementById('fullImageModal');
+    
+    if (fullImageModal.style.display === 'flex') {
+        switch(event.key) {
+            case 'Escape':
+                closeFullImage();
+                break;
+            case 'ArrowLeft':
+                previousImage();
+                break;
+            case 'ArrowRight':
+                nextImage();
+                break;
+        }
+    }
+    
+    const galleryModal = document.getElementById('imageGalleryModal');
+    if (galleryModal.style.display === 'flex' && event.key === 'Escape') {
+        closeImageGallery();
+    }
+});
