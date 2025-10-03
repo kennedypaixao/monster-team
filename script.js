@@ -928,7 +928,7 @@ const highlightVideos = {
 
 // Function to convert YouTube link to embed format
 function getYouTubeEmbedUrl(videoId) {
-    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1`;
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&controls=1&showinfo=0&rel=0&modestbranding=1&cc_load_policy=1&fs=1`;
 }
 
 // Function to get YouTube thumbnail

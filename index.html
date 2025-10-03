@@ -852,7 +852,12 @@
     <div id="fullVideoModal" class="full-video-modal" style="display: none;">
         <span class="full-video-close" onclick="closeFullVideo()">&times;</span>
         <div class="video-container">
-            <iframe id="fullVideoFrame" src="" frameborder="0" allowfullscreen></iframe>
+            <iframe id="fullVideoFrame" 
+                    src="" 
+                    frameborder="0" 
+                    allowfullscreen
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+            </iframe>
         </div>
         <div class="video-nav">
             <button onclick="previousVideo()" class="nav-btn prev-btn">&#8249;</button>
