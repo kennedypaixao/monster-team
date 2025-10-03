@@ -894,10 +894,144 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Keyboard navigation
+// Video Gallery Functions
+let currentVideoIndex = 0;
+let galleryVideos = [];
+
+// List of available videos with YouTube links
+const highlightVideos = [
+    {
+        id: 'BtervzUxBVA',
+        title: 'Monster Team TCB 2025 - Highlights',
+        thumbnail: './files/mayckon.jpeg', // placeholder thumbnail
+        type: 'youtube'
+    }
+    // Add more videos here as needed
+];
+
+// Function to convert YouTube link to embed format
+function getYouTubeEmbedUrl(videoId) {
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1`;
+}
+
+// Function to get YouTube thumbnail
+function getYouTubeThumbnail(videoId) {
+    return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+}
+
+function openVideoGallery() {
+    const modal = document.getElementById('videoGalleryModal');
+    const videoGrid = document.getElementById('videoGalleryGrid');
+    
+    // Clear existing content
+    videoGrid.innerHTML = '';
+    
+    // Create video items
+    highlightVideos.forEach((video, index) => {
+        const videoItem = document.createElement('div');
+        videoItem.className = 'video-item';
+        videoItem.onclick = () => openFullVideo(index);
+        
+        // Create thumbnail image
+        const thumbnail = document.createElement('img');
+        thumbnail.src = video.type === 'youtube' ? getYouTubeThumbnail(video.id) : video.thumbnail;
+        thumbnail.alt = video.title;
+        thumbnail.className = 'video-thumbnail';
+        thumbnail.loading = 'lazy';
+        
+        // Create play button
+        const playButton = document.createElement('div');
+        playButton.className = 'video-play-button';
+        playButton.innerHTML = '▶';
+        
+        // Create title overlay
+        const title = document.createElement('div');
+        title.className = 'video-title';
+        title.textContent = video.title;
+        
+        videoItem.appendChild(thumbnail);
+        videoItem.appendChild(playButton);
+        videoItem.appendChild(title);
+        videoGrid.appendChild(videoItem);
+    });
+    
+    galleryVideos = highlightVideos;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeVideoGallery() {
+    const modal = document.getElementById('videoGalleryModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+function openFullVideo(index) {
+    currentVideoIndex = index;
+    const fullVideoModal = document.getElementById('fullVideoModal');
+    const fullVideoFrame = document.getElementById('fullVideoFrame');
+    
+    const video = galleryVideos[currentVideoIndex];
+    const embedUrl = video.type === 'youtube' ? getYouTubeEmbedUrl(video.id) : video.url;
+    fullVideoFrame.src = embedUrl;
+    
+    fullVideoModal.style.display = 'flex';
+}
+
+function closeFullVideo() {
+    const fullVideoModal = document.getElementById('fullVideoModal');
+    const fullVideoFrame = document.getElementById('fullVideoFrame');
+    
+    fullVideoFrame.src = ''; // Stop video playback
+    fullVideoModal.style.display = 'none';
+}
+
+function previousVideo() {
+    currentVideoIndex = currentVideoIndex > 0 ? currentVideoIndex - 1 : galleryVideos.length - 1;
+    const fullVideoFrame = document.getElementById('fullVideoFrame');
+    const video = galleryVideos[currentVideoIndex];
+    const embedUrl = video.type === 'youtube' ? getYouTubeEmbedUrl(video.id) : video.url;
+    fullVideoFrame.src = embedUrl;
+}
+
+function nextVideo() {
+    currentVideoIndex = currentVideoIndex < galleryVideos.length - 1 ? currentVideoIndex + 1 : 0;
+    const fullVideoFrame = document.getElementById('fullVideoFrame');
+    const video = galleryVideos[currentVideoIndex];
+    const embedUrl = video.type === 'youtube' ? getYouTubeEmbedUrl(video.id) : video.url;
+    fullVideoFrame.src = embedUrl;
+}
+
+// Update existing modal close listeners to include video modals
+document.addEventListener('click', function(event) {
+    const galleryModal = document.getElementById('imageGalleryModal');
+    const fullImageModal = document.getElementById('fullImageModal');
+    const videoGalleryModal = document.getElementById('videoGalleryModal');
+    const fullVideoModal = document.getElementById('fullVideoModal');
+    
+    if (event.target === galleryModal) {
+        closeImageGallery();
+    }
+    
+    if (event.target === fullImageModal) {
+        closeFullImage();
+    }
+    
+    if (event.target === videoGalleryModal) {
+        closeVideoGallery();
+    }
+    
+    if (event.target === fullVideoModal) {
+        closeFullVideo();
+    }
+});
+
+// Update keyboard navigation to include video controls
 document.addEventListener('keydown', function(event) {
     const fullImageModal = document.getElementById('fullImageModal');
+    const fullVideoModal = document.getElementById('fullVideoModal');
     
+    // Image gallery keyboard controls
     if (fullImageModal.style.display === 'flex') {
         switch(event.key) {
             case 'Escape':
@@ -912,8 +1046,30 @@ document.addEventListener('keydown', function(event) {
         }
     }
     
+    // Video gallery keyboard controls
+    if (fullVideoModal.style.display === 'flex') {
+        switch(event.key) {
+            case 'Escape':
+                closeFullVideo();
+                break;
+            case 'ArrowLeft':
+                previousVideo();
+                break;
+            case 'ArrowRight':
+                nextVideo();
+                break;
+        }
+    }
+    
+    // Close gallery modals with Escape
     const galleryModal = document.getElementById('imageGalleryModal');
+    const videoGalleryModal = document.getElementById('videoGalleryModal');
+    
     if (galleryModal.style.display === 'flex' && event.key === 'Escape') {
         closeImageGallery();
+    }
+    
+    if (videoGalleryModal.style.display === 'flex' && event.key === 'Escape') {
+        closeVideoGallery();
     }
 });
