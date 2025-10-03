@@ -787,6 +787,7 @@ const highlightImages = [
     './files/highlights/Image/highlights_3.jpeg',
     './files/highlights/Image/highlights_4.jpeg'
     // Note: HEIC files are not supported in browsers, only showing JPG/JPEG files
+    // To add more images, convert HEIC files to JPG/JPEG format and add them here
 ];
 
 function openImageGallery() {
