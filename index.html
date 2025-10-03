@@ -500,7 +500,7 @@
                 <div class="highlights-content">
                     <div class="highlights-video-container">
                         <iframe id="highlights-video" 
-                                src="https://www.youtube.com/embed/BtervzUxBVA?autoplay=1&mute=1&loop=1&playlist=BtervzUxBVA&controls=1" 
+                                src="https://www.youtube.com/embed/2KGL2tnAgh0?autoplay=1&mute=1&loop=1&playlist=2KGL2tnAgh0&controls=1" 
                                 title="Monster Team TCB 2025 Highlights"
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -510,42 +510,40 @@
                                 style="width: 100%; height: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
                         </iframe>
                     </div>
-                    <!-- <div class="highlights-grid-container"> -->
-                        <div class="highlights-grid">
-                            <div onclick="openImageGallery()" class="highlights-grid-item hl-bg-image">
-                                <div class="degrade-image"></div>
-                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="margin-bottom: 10px;">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                                    <polyline points="21,15 16,10 5,21"/>
-                                </svg>
-                                <span>IMAGENS</span>
-                            </div>
-                            <div onclick="openVideoGallery()" class="highlights-grid-item hl-bg-video">
-                                <div class="degrade-image"></div>
-                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="margin-bottom: 10px;">
-                                    <polygon points="23,12 6,22 6,2"/>
-                                </svg>
-                                <span>VÍDEOS</span>
-                            </div>
-                            <div onclick="openVideoGallery()" class="highlights-grid-item hl-bg-backstage">
-                                <div class="degrade-image"></div>
-                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="margin-bottom: 10px;">
-                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                                </svg>
-                                <span>BACKSTAGE</span>
-                            </div>
-                            <div onclick="openVideoGallery()" class="highlights-grid-item hl-bg-test">
-                                <div class="degrade-image"></div>
-                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="margin-bottom: 10px;">
-                                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                                    <line x1="3" y1="6" x2="21" y2="6"/>
-                                    <path d="M16 10a4 4 0 0 1-8 0"/>
-                                </svg>
-                                <span>PROVAS</span>
-                            </div>
+                    <div class="highlights-grid">
+                        <div onclick="openImageGallery()" class="highlights-grid-item hl-bg-image">
+                            <div class="degrade-image"></div>
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="margin-bottom: 10px;">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21,15 16,10 5,21"/>
+                            </svg>
+                            <span>IMAGENS</span>
                         </div>
-                    <!-- </div> -->
+                        <div onclick="openVideoGallery('video')" class="highlights-grid-item hl-bg-video">
+                            <div class="degrade-image"></div>
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="margin-bottom: 10px;">
+                                <polygon points="23,12 6,22 6,2"/>
+                            </svg>
+                            <span>VÍDEOS</span>
+                        </div>
+                        <div onclick="openVideoGallery('backstage')" class="highlights-grid-item hl-bg-backstage">
+                            <div class="degrade-image"></div>
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="margin-bottom: 10px;">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                            <span>BACKSTAGE</span>
+                        </div>
+                        <div onclick="openVideoGallery('test')" class="highlights-grid-item hl-bg-test">
+                            <div class="degrade-image"></div>
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="margin-bottom: 10px;">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                                <line x1="3" y1="6" x2="21" y2="6"/>
+                                <path d="M16 10a4 4 0 0 1-8 0"/>
+                            </svg>
+                            <span>PROVAS</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

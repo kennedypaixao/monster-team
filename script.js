@@ -899,15 +899,32 @@ let currentVideoIndex = 0;
 let galleryVideos = [];
 
 // List of available videos with YouTube links
-const highlightVideos = [
-    {
-        id: 'BtervzUxBVA',
-        title: 'Monster Team TCB 2025 - Highlights',
-        thumbnail: './files/mayckon.jpeg', // placeholder thumbnail
-        type: 'youtube'
-    }
-    // Add more videos here as needed
-];
+const highlightVideos = {
+    "video": [
+        {
+            id: '2KGL2tnAgh0',
+            title: 'Monster Team TCB 2025 - Highlights',
+            thumbnail: './files/mayckon.jpeg',
+            type: 'youtube'
+        }
+    ],
+    "backstage": [
+        {
+            id: 'tvD5VtUykak',
+            title: 'Monster Team TCB 2025 - Backstage',
+            thumbnail: './files/mayckon.jpeg',
+            type: 'youtube'
+        }
+    ],
+    "test": [
+        {
+            id: 'hi6LLO8YFmg',
+            title: 'Monster Team TCB 2025 - Prova',
+            thumbnail: './files/mayckon.jpeg',
+            type: 'youtube'
+        }
+    ],
+};
 
 // Function to convert YouTube link to embed format
 function getYouTubeEmbedUrl(videoId) {
@@ -919,15 +936,17 @@ function getYouTubeThumbnail(videoId) {
     return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 }
 
-function openVideoGallery() {
+function openVideoGallery(type = 'video' | 'backstage' | 'test') {
     const modal = document.getElementById('videoGalleryModal');
     const videoGrid = document.getElementById('videoGalleryGrid');
     
     // Clear existing content
     videoGrid.innerHTML = '';
+
+    const activeVideos = highlightVideos[type] || highlightVideos['video'];
     
     // Create video items
-    highlightVideos.forEach((video, index) => {
+    activeVideos.forEach((video, index) => {
         const videoItem = document.createElement('div');
         videoItem.className = 'video-item';
         videoItem.onclick = () => openFullVideo(index);
@@ -954,8 +973,8 @@ function openVideoGallery() {
         videoItem.appendChild(title);
         videoGrid.appendChild(videoItem);
     });
-    
-    galleryVideos = highlightVideos;
+
+    galleryVideos = activeVideos;
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
