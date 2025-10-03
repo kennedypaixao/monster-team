@@ -785,9 +785,36 @@ const highlightImages = [
     './files/highlights/Image/highlights_1.JPG',
     './files/highlights/Image/highlights_2.jpeg',
     './files/highlights/Image/highlights_3.jpeg',
-    './files/highlights/Image/highlights_4.jpeg'
-    // Note: HEIC files are not supported in browsers, only showing JPG/JPEG files
-    // To add more images, convert HEIC files to JPG/JPEG format and add them here
+    './files/highlights/Image/highlights_4.jpeg',
+    './files/highlights/Image/highlights_5.jpg',
+    './files/highlights/Image/highlights_6.jpg',
+    './files/highlights/Image/highlights_7.jpg',
+    './files/highlights/Image/highlights_8.jpg',
+    './files/highlights/Image/highlights_9.jpg',
+    './files/highlights/Image/highlights_10.jpg',
+    './files/highlights/Image/highlights_11.jpg',
+    './files/highlights/Image/highlights_12.jpg',
+    './files/highlights/Image/highlights_13.jpg',
+    './files/highlights/Image/highlights_14.jpg',
+    './files/highlights/Image/highlights_15.jpg',
+    './files/highlights/Image/highlights_16.jpg',
+    './files/highlights/Image/highlights_17.jpg',
+    './files/highlights/Image/highlights_18.jpg',
+    './files/highlights/Image/highlights_19.jpg',
+    './files/highlights/Image/highlights_20.jpg',
+    './files/highlights/Image/highlights_21.jpg',
+    './files/highlights/Image/highlights_22.jpg',
+    './files/highlights/Image/highlights_23.jpg',
+    './files/highlights/Image/highlights_24.jpg',
+    './files/highlights/Image/highlights_25.jpg',
+    './files/highlights/Image/highlights_26.jpg',
+    './files/highlights/Image/highlights_27.jpg',
+    './files/highlights/Image/highlights_28.jpg',
+    './files/highlights/Image/highlights_29.jpg',
+    './files/highlights/Image/highlights_30.jpg',
+    './files/highlights/Image/highlights_31.jpg',
+    './files/highlights/Image/highlights_32.jpg',
+    './files/highlights/Image/highlights_33.jpg'
 ];
 
 function openImageGallery() {
